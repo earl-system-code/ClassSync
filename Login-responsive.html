@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style-responsive.css">
+</head>
+<body class="Login-page">
+    <main class="login-layout">
+        <section class="Login-design" aria-label="Welcome">
+            <img class="Login-logo" src="ClassSync Education Sync Logo.webp" alt="ClassSync — Attend, Track, Stay Organized">
+        </section>
+
+        <section class="login-panel">
+            <div class="Login-text">
+                <h1>Hello! Welcome Back!</h1>
+                <p>Log in to continue to your account.</p>
+            </div>
+
+            <form class="login-form" action="Home.html" method="get">
+                <div class="input-id">
+                    <label for="username">ID Number</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your SR code (26 - 000000)"
+                        autocomplete="username"
+                        required
+                    >
+                </div>
+
+                <div class="input-password">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <label class="robot-check" for="robotCheck">
+                    <input id="robotCheck" name="robotCheck" type="checkbox" required>
+                    <span>I'm not a robot</span>
+                </label>
+
+                <button type="submit" class="login-btn">Log In</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

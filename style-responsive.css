@@ -1,0 +1,261 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+body.Login-page {
+    min-height: 100vh;
+    background: #252525;
+    color: #fff;
+}
+
+/* Responsive two-panel login layout */
+.login-layout {
+    width: min(1100px, calc(100% - 48px));
+    min-height: 620px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    overflow: hidden;
+    border-radius: 28px;
+    background: #080808;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.35);
+}
+
+.Login-design {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: #000;
+}
+
+.Login-logo {
+    display: block;
+    width: min(100%, 520px);
+    height: auto;
+    object-fit: contain;
+}
+
+.login-panel {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(32px, 6vw, 76px);
+    background: #202020;
+}
+
+.Login-text {
+    margin-bottom: 38px;
+}
+
+.Login-text h1 {
+    color: #fff;
+    font-family: "Times New Roman", Times, serif;
+    font-size: clamp(28px, 3.2vw, 40px);
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.Login-text p {
+    color: #d0d0d0;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.input-id,
+.input-password {
+    width: 100%;
+}
+
+.input-id label,
+.input-password label {
+    display: block;
+    margin-bottom: 9px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.input-id input,
+.input-password input {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid #ccd0d5;
+    border-radius: 7px;
+    background: #fff;
+    color: #222;
+    font: inherit;
+    font-size: 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-id input:focus,
+.input-password input:focus {
+    outline: none;
+    border-color: #ff3030;
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.22);
+}
+
+.robot-check {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+    max-width: 100%;
+    min-height: 44px;
+    padding: 10px 13px;
+    border-radius: 7px;
+    background: #303030;
+    color: #eee;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.robot-check input {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 auto;
+    accent-color: red;
+    cursor: pointer;
+}
+
+.login-btn {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 7px;
+    background: #f00;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.login-btn:hover {
+    background: #d00000;
+}
+
+.login-btn:active {
+    transform: scale(0.99);
+}
+
+.login-btn:focus-visible,
+.robot-check input:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+/* Tablets and smaller laptops */
+@media (max-width: 800px) {
+    .login-layout {
+        width: min(620px, calc(100% - 32px));
+        min-height: auto;
+        margin: 24px auto;
+        grid-template-columns: 1fr;
+    }
+
+    .Login-design {
+        min-height: 190px;
+        padding: 28px;
+    }
+
+    .login-panel {
+        padding: clamp(28px, 7vw, 48px);
+    }
+
+    .Login-text {
+        margin-bottom: 30px;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    body.Login-page {
+        padding: 12px 0;
+    }
+
+    .login-layout {
+        width: calc(100% - 24px);
+        margin: 12px auto;
+        border-radius: 18px;
+    }
+
+    .Login-design {
+        min-height: 140px;
+        padding: 22px;
+    }
+
+    .login-panel {
+        padding: 28px 22px 30px;
+    }
+
+    .Login-text {
+        margin-bottom: 26px;
+    }
+
+    .Login-text h1 {
+        font-size: 29px;
+    }
+
+    .Login-text p {
+        font-size: 15px;
+    }
+
+    .login-form {
+        gap: 19px;
+    }
+
+    .input-id input,
+    .input-password input {
+        font-size: 16px; /* Prevents automatic zoom on many mobile browsers */
+    }
+}
+
+/* Very short screens in landscape */
+@media (max-height: 520px) and (min-width: 801px) {
+    .login-layout {
+        min-height: 0;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .login-panel {
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+
+    .Login-text {
+        margin-bottom: 20px;
+    }
+
+    .login-form {
+        gap: 14px;
+    }
+}
